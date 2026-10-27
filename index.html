@@ -12,7 +12,7 @@
 <link rel="icon" href="icon.svg?v=a2101781ec" type="image/svg+xml">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=a2101781ec">
 <meta name="apple-mobile-web-app-title" content="پیک">
-<link rel="stylesheet" href="style.css?v=ef6ceec87e">
+<link rel="stylesheet" href="style.css?v=741d4f93b4">
 </head>
 <body>
 <main class="app">
@@ -116,14 +116,11 @@
 <p class="big" id="todayLine">…</p>
 <div class="funnel" id="funnel"></div>
 </article>
-<article class="today" id="refer" hidden>
-<p class="eyebrow">دوستات رو بیار، روز هدیه بگیر</p>
-<p class="big">کد معرف تو: <b id="refCode"></b></p>
-<p class="small muted" id="refHow"></p>
-<div class="dice"><button class="btn acc" type="button" id="refShare">دعوت دوست</button><button class="btn line" type="button" id="refCopy">کپی کد</button></div>
-<div class="list" id="friends"></div>
-<div class="tog"><p><span>امضای «⚡ با پیک» زیر پیام ربات‌هام</span><br><span class="small muted" id="sigNote"></span></p><span class="sw" role="switch" tabindex="0" id="sigSw" aria-label="امضای با پیک"></span></div>
-</article>
+<button class="today refer-mini" type="button" id="refer" data-go="refs" hidden>
+<span class="eyebrow">رفیقا · رفیقات رو بیار، روز هدیه بگیر</span>
+<span class="big">کد تو: <b id="refMiniCode"></b></span>
+<span class="small muted" id="refMiniLine"></span>
+</button>
 <div class="row between"><h2 class="t3">ابزارها <span>همه یه‌جا</span></h2></div>
 <div class="feats" id="feats"></div>
 </section>
@@ -208,6 +205,27 @@
 <div class="card" id="thanksBox"></div>
 <div class="card list" id="mentList"><p class="empty">در حال خوندن…</p></div>
 </section>
+<section class="screen" id="refs" hidden>
+<h1 class="t2">رفیقا<span>کد تو، رفیقات، روزهای هدیه</span></h1>
+<article class="today">
+<p class="eyebrow">کد معرف تو</p>
+<p class="refcode" id="refCode">…</p>
+<p class="small muted" id="refHow"></p>
+<div class="dice"><button class="btn acc" type="button" id="refShare">دعوت رفیق</button><button class="btn line" type="button" id="refCopy">کپی کد</button></div>
+</article>
+<div class="stats3" id="refStats"></div>
+<div class="card list" id="friends"></div>
+<div class="card">
+<p class="eyebrow">چطوری کار می‌کنه</p>
+<div class="step"><span class="n">۱</span><p>کدت رو با «دعوت رفیق» برای رفیقت بفرست.</p></div>
+<div class="step"><span class="n">۲</span><p>رفیقت موقع خرید پیک، تو دایرکت کدت رو می‌نویسه و ۱۰٪ تخفیف می‌گیره.</p></div>
+<div class="step"><span class="n">۳</span><p>خریدش که تأیید شد، ۱۵ روز به اشتراک تو اضافه می‌شه و اسمش همین‌جا میاد.</p></div>
+</div>
+<div class="card">
+<p class="eyebrow">یه راه دیگه برای روز هدیه</p>
+<div class="tog"><p><span>امضای «⚡ با پیک» زیر پیام ربات‌هام</span><br><span class="small muted" id="sigNote"></span></p><span class="sw" role="switch" tabindex="0" id="sigSw" aria-label="امضای با پیک"></span></div>
+</div>
+</section>
 </main>
 <nav class="dock" id="dock" aria-label="بخش‌ها" hidden></nav>
 <div class="sheet" id="sheet" hidden>
@@ -241,6 +259,6 @@
 </div>
 </div>
 <p class="toast" id="toast" hidden></p>
-<script src="p.js?v=e6251cec8d"></script>
+<script src="p.js?v=4e3148133b"></script>
 </body>
 </html>
