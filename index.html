@@ -12,7 +12,7 @@
 <link rel="icon" href="icon.svg?v=a2101781ec" type="image/svg+xml">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=a2101781ec">
 <meta name="apple-mobile-web-app-title" content="پیک">
-<link rel="stylesheet" href="style.css?v=162afa38f3">
+<link rel="stylesheet" href="style.css?v=da72cefc35">
 </head>
 <body>
 <main class="app">
@@ -142,6 +142,12 @@
 <label class="f" id="kwBox"><span>کلمه‌ای که باید بنویسن</span><input class="inp" type="text" id="bKw" maxlength="24" placeholder="مثلاً ۳ یا امنیت"></label>
 <div class="kwrow" id="kwHint"></div>
 <label class="f"><span>متن پیام <em class="small muted">(خودت بنویس، یا از پیشنهادها استفاده کن)</em></span><textarea class="inp" id="bText" rows="6"></textarea></label>
+<div class="rw">
+<span class="small muted">✨ اصلاح متن خودت با لحن:</span>
+<div class="chips" id="rwTones" aria-label="اصلاح با لحن"></div>
+<button class="btn line sm" type="button" id="rwUndo" hidden>برگردون متن خودم</button>
+</div>
+<span class="small muted">یا یه متن آماده با لحن:</span>
 <div class="chips" id="tones" aria-label="لحن"></div>
 <div class="dice"><button class="btn ink" type="button" id="dice"><span data-icon="dice"></span> یه متن دیگه</button><button class="btn line" type="button" id="testBtn">تستش کن</button></div>
 <div class="card" id="toggles"></div>
@@ -227,6 +233,6 @@
 </div>
 </div>
 <p class="toast" id="toast" hidden></p>
-<script src="p.js?v=309f641f53"></script>
+<script src="p.js?v=0141792397"></script>
 </body>
 </html>
