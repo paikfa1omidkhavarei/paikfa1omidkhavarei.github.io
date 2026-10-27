@@ -10,16 +10,17 @@
 <title>پیک · پنل امید</title>
 <link rel="icon" href="icon.svg?v=a2101781ec" type="image/svg+xml">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=a2101781ec">
-<link rel="stylesheet" href="style.css?v=4e4fba6e1b">
+<link rel="stylesheet" href="style.css?v=629de68bc5">
 </head>
 <body>
 <main class="app">
 <section class="screen" id="a-lock">
-<header class="head"><img class="av logo" src="icon.svg?v=a2101781ec" alt="پیک" width="42" height="42"><p class="who"><b>پنل پیک</b><span>فقط برای امید</span></p></header>
+<header class="head"><img class="av logo" src="icon.svg?v=a2101781ec" alt="پیک" width="42" height="42"><p class="who"><b>پنل پیک</b><span>فقط برای امید</span></p><button class="iconbtn themebtn" type="button" data-theme-btn></button></header>
 <div class="stack" id="aOpen" hidden>
 <h1 class="t2">سلام امید<span>رمز پنل رو بزن</span></h1>
 <label class="f"><span>رمز پنل</span><input class="inp" type="password" id="aPass" autocomplete="current-password"></label>
 <p class="err" id="aErr" hidden></p>
+<label class="remember"><input type="checkbox" id="aRemember" checked> رو این گوشی یادم بمون (تا «قفل» رو بزنی)</label>
 <button class="btn acc wide" type="button" id="aGo">ورود</button>
 </div>
 <div class="stack" id="aSetup" hidden>
@@ -37,6 +38,7 @@
 <header class="head">
 <span class="av" id="mAv">ا</span>
 <p class="who"><b>پنل پیک</b><span id="mUser"></span></p>
+<button class="iconbtn themebtn" type="button" data-theme-btn></button>
 <button class="iconbtn" type="button" aria-label="قفل" id="mLock" data-icon="lock"></button>
 </header>
 <p class="banner warn" id="mKeyWarn" hidden></p>
@@ -83,6 +85,7 @@
 <p>ربات‌ها، تقویم کار، آمار، انتشار و منشن‌ها رو برای پیج خودت هم داری. با همین کلید Zernio پنل، و همین رمز پنل وارد می‌شی.</p>
 <p class="pill" id="mineState"></p>
 <p class="err" id="mineErr" hidden></p>
+<label class="f" id="minePassBox" hidden><span>رمز پنل (یه بار، برای قفل کردن پروفایل پیج خودت)</span><input class="inp" type="password" id="minePass" autocomplete="current-password"></label>
 <button class="btn acc wide" type="button" id="mineGo">فعالش کن</button>
 <a class="btn line wide" id="mineOpen" href="./" hidden>برو به پیک پیج خودم <span class="arr">←</span></a>
 </div>
@@ -143,6 +146,6 @@
 </div>
 </div>
 <p class="toast" id="toast" hidden></p>
-<script src="a.js?v=cf39540c63"></script>
+<script src="a.js?v=75bbafb93b"></script>
 </body>
 </html>

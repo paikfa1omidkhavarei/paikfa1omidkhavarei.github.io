@@ -12,12 +12,12 @@
 <link rel="icon" href="icon.svg?v=a2101781ec" type="image/svg+xml">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=a2101781ec">
 <meta name="apple-mobile-web-app-title" content="پیک">
-<link rel="stylesheet" href="style.css?v=4e4fba6e1b">
+<link rel="stylesheet" href="style.css?v=629de68bc5">
 </head>
 <body>
 <main class="app">
 <section class="screen" id="s-lock">
-<header class="head"><img class="av logo" src="icon.svg?v=a2101781ec" alt="پیک" width="42" height="42"><p class="who"><b>پیک</b><span>دایرکت هوشمند</span></p></header>
+<header class="head"><img class="av logo" src="icon.svg?v=a2101781ec" alt="پیک" width="42" height="42"><p class="who"><b>پیک</b><span>دایرکت هوشمند</span></p><button class="iconbtn themebtn" type="button" data-theme-btn></button></header>
 <h1 class="t2">خوش اومدی<span>کی هستی؟</span></h1>
 <p class="banner warn" id="inapp" hidden>این صفحه تو مرورگر داخل اینستاگرام باز شده و ممکنه اطلاعاتت پاک بشه. از منوی ⋯ بزن «Open in browser».</p>
 <div class="list" id="profiles"></div>
@@ -25,6 +25,7 @@
 <p class="eyebrow" id="unlockName"></p>
 <label class="f"><span>رمزت</span><input class="inp" type="password" id="unlockPass" autocomplete="current-password"></label>
 <p class="err" id="unlockErr" hidden></p>
+<label class="remember"><input type="checkbox" id="unlockRemember" checked> رو این گوشی یادم بمون (دیگه رمز نمی‌خواد تا «قفل» رو بزنی)</label>
 <div class="dice"><button class="btn acc" type="button" id="unlockGo">ورود</button><button class="btn line" type="button" id="unlockForget">حذف از این گوشی</button></div>
 </div>
 <div class="card" id="moveIn" hidden>
@@ -71,6 +72,19 @@
 <label class="f"><span>اسم این پروفایل</span><input class="inp" type="text" id="actName" maxlength="24"></label>
 <label class="f"><span>رمز این گوشی (حداقل ۸ حرف)</span><input class="inp" type="password" id="actPass" autocomplete="new-password"></label>
 <label class="f"><span>تکرار رمز</span><input class="inp" type="password" id="actPass2" autocomplete="new-password"></label>
+<div class="terms">
+<p class="eyebrow">قبل از شروع، چند تا قرار ساده</p>
+<ul class="news">
+<li>پیک یه دستیاره؛ متن پیام‌ها و کاری که با پیجت می‌کنی انتخاب خودته. قوانین اینستاگرام رو رعایت کن تا پیجت سالم بمونه.</li>
+<li>پیک از راه سرویس رسمی Zernio به اینستاگرام وصله. اگه اینستاگرام یا Zernio چیزی رو عوض کنن یا موقتاً قطع بشن، ممکنه یه بخش برای مدتی کار نکنه؛ ما سریع درستش می‌کنیم.</li>
+<li>پیک جلوی کارهای پرخطر رو می‌گیره («سلامت پیج»)، ولی هیچ ابزاری نمی‌تونه قول بده اینستاگرام هیچ‌وقت محدودیت نذاره.</li>
+<li>کلید Zernio و رمزت فقط روی گوشی خودته و ما نمی‌بینیمشون. اگه رمز یادت رفت، با همون کد اشتراک دوباره فعالش می‌کنی.</li>
+<li>هر اشتراک برای یه پیج و یه ساله و به پیج دیگه منتقل نمی‌شه. تمدید از ۳ روز آخر باز می‌شه.</li>
+</ul>
+<a class="small" href="terms.html" target="_blank" rel="noopener noreferrer">متن کامل شرایط</a>
+</div>
+<label class="remember"><input type="checkbox" id="actAgree"> خوندم و قبول دارم</label>
+<label class="remember"><input type="checkbox" id="actRemember" checked> رو این گوشی یادم بمون</label>
 <button class="btn acc wide" type="button" id="actGo">شروع کن <span class="arr">←</span></button>
 </div>
 </div>
@@ -89,6 +103,7 @@
 <header class="head">
 <span class="av" id="hAv">ا</span>
 <p class="who"><b id="hHello">سلام</b><span id="hUser"></span></p>
+<button class="iconbtn themebtn" type="button" data-theme-btn></button>
 <button class="iconbtn" type="button" aria-label="قفل" data-lock data-icon="lock"></button>
 </header>
 <p class="banner warn" id="renewBanner" hidden></p>
@@ -190,7 +205,28 @@
 <button class="btn line wide" type="button" id="sheetClose">فهمیدم</button>
 </div>
 </div>
+<div class="sheet" id="termsSheet" hidden>
+<div class="in-sheet" role="dialog" aria-label="شرایط تازه">
+<h2 class="t3">شرایط پیک به‌روز شده</h2>
+<ul class="news">
+<li>پیک یه دستیاره؛ متن پیام‌ها و کاری که با پیجت می‌کنی انتخاب خودته. قوانین اینستاگرام رو رعایت کن تا پیجت سالم بمونه.</li>
+<li>پیک از راه سرویس رسمی Zernio به اینستاگرام وصله. اگه اینستاگرام یا Zernio چیزی رو عوض کنن یا موقتاً قطع بشن، ممکنه یه بخش برای مدتی کار نکنه؛ ما سریع درستش می‌کنیم.</li>
+<li>پیک جلوی کارهای پرخطر رو می‌گیره («سلامت پیج»)، ولی هیچ ابزاری نمی‌تونه قول بده اینستاگرام هیچ‌وقت محدودیت نذاره.</li>
+<li>کلید Zernio و رمزت فقط روی گوشی خودته و ما نمی‌بینیمشون. اگه رمز یادت رفت، با همون کد اشتراک دوباره فعالش می‌کنی.</li>
+<li>هر اشتراک برای یه پیج و یه ساله و به پیج دیگه منتقل نمی‌شه. تمدید از ۳ روز آخر باز می‌شه.</li>
+</ul>
+<a class="small" href="terms.html" target="_blank" rel="noopener noreferrer">متن کامل شرایط</a>
+<button class="btn acc wide" type="button" id="termsOk">خوندم و قبول دارم</button>
+</div>
+</div>
+<div class="sheet" id="newsSheet" hidden>
+<div class="in-sheet" role="dialog" aria-label="تازه‌های پیک">
+<h2 class="t3">تازه‌های پیک ✨</h2>
+<ul class="news" id="newsList"></ul>
+<button class="btn acc wide" type="button" id="newsOk">دیدم</button>
+</div>
+</div>
 <p class="toast" id="toast" hidden></p>
-<script src="p.js?v=1d0d99edc1"></script>
+<script src="p.js?v=c0ddc6e850"></script>
 </body>
 </html>
