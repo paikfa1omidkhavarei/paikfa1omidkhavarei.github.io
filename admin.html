@@ -40,6 +40,7 @@
 <button class="iconbtn" type="button" aria-label="قفل" id="mLock" data-icon="lock"></button>
 </header>
 <p class="banner warn" id="mKeyWarn" hidden></p>
+<p class="banner warn" id="mCapWarn" hidden></p>
 <div class="tabs" id="mTabs"></div>
 <div class="stack" id="t-sales">
 <h1 class="t2">رسیدهای تازه<span>فقط کسایی که عکس رسید فرستادن</span></h1>
@@ -56,6 +57,8 @@
 <div class="card">
 <p class="small muted">کسی که «پیک» رو دایرکت کنه یا زیر یکی از پست‌هات کامنت کنه (یا برای تمدید «تمدید» رو دایرکت کنه)، این مراحل رو می‌ره: قیمت و شماره کارت ← عکس رسید ← آیدی پیج. بعد تو «رسیدها» میاد که تأییدش کنی.</p>
 <p class="pill" id="sbStatus">خاموش</p>
+<p class="small" id="sbUsage"></p>
+<div class="meter"><i id="sbBar"></i></div>
 </div>
 <div class="card">
 <label class="f"><span>مبلغ</span><input class="inp" type="text" id="sbPrice" maxlength="40"></label>
@@ -91,6 +94,14 @@
 </div>
 <div class="stack" id="t-list" hidden>
 <h1 class="t2">اشتراک‌ها<span>کی تا کی</span></h1>
+<div class="card" id="siteBox">
+<p class="eyebrow">سایت مشتری‌های جدید</p>
+<p class="t3" id="siteCount"></p>
+<div class="meter"><i id="siteBar"></i></div>
+<label class="f"><span>آدرس سایت فعلی (مشتری‌های جدید اینجا فعال می‌شن؛ تمدیدها همیشه می‌رن سایت خود مشتری)</span><input class="inp ltr" type="url" id="siteUrl" spellcheck="false"></label>
+<button class="btn line wide" type="button" id="siteSave">ذخیره‌ی آدرس</button>
+<p class="small muted" id="siteAll"></p>
+</div>
 <div class="card list" id="licList"></div>
 </div>
 <div class="stack" id="t-key" hidden>
@@ -122,6 +133,6 @@
 </div>
 </div>
 <p class="toast" id="toast" hidden></p>
-<script src="a.js?v=b98cb0d601"></script>
+<script src="a.js?v=725e4bcd04"></script>
 </body>
 </html>
