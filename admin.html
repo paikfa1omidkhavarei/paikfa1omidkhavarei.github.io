@@ -80,6 +80,7 @@
 <label class="f"><span>اگه به‌جای عکس متن فرستاد</span><textarea class="inp" id="sbNudge" rows="2"></textarea></label>
 <label class="f"><span>بعد از رسید (آیدی پیج رو بپرس)</span><textarea class="inp" id="sbAsk" rows="3"></textarea></label>
 <label class="f"><span>پیام آخر</span><textarea class="inp" id="sbDone" rows="2"></textarea></label>
+<label class="f"><span>«کد معرف داری؟» (بعد از انتخاب پکیج، فقط برای خرید اول)</span><textarea class="inp" id="sbRefAsk" rows="4"></textarea></label>
 <p class="small muted"><b>{پکیج‌ها}</b> (فهرست پکیج‌ها با قیمت و تخفیف)، <b>{پکیج}</b> و <b>{مبلغ}</b> (پکیجی که انتخاب کرده)، <b>{کارت}</b> و <b>{نام}</b> تو متن‌ها خودکار جایگزین می‌شن.</p>
 </div>
 <p class="err" id="sbErr" hidden></p>
@@ -112,6 +113,35 @@
 <div class="dice"><button class="btn acc" type="button" id="iCopyLink">کپی لینک</button><button class="btn line" type="button" id="iCopyCode">کپی کد</button></div>
 </div>
 </div>
+<div class="stack" id="t-refs" hidden>
+<h1 class="t2">معرف‌ها<span>همکارها و هدیه‌ها</span></h1>
+<div class="card">
+<p class="eyebrow">همکارها · پورسانت از هر فروش</p>
+<p class="small muted">خریدار کد همکار رو تو دایرکت می‌نویسه و ۱۰٪ تخفیف می‌گیره؛ پورسانت از مبلغ واقعی پرداخت‌شده حساب می‌شه.</p>
+<div class="list" id="affList"></div>
+<label class="f"><span>کد همکار (انگلیسی، مثلاً sara)</span><input class="inp ltr" type="text" id="affCode" spellcheck="false" maxlength="30"></label>
+<label class="f"><span>اسم یا پیج همکار</span><input class="inp" type="text" id="affName" maxlength="40"></label>
+<label class="f"><span>پورسانت (درصد)</span><input class="inp ltr" type="number" id="affRate" value="25" min="1" max="60"></label>
+<p class="err" id="affErr" hidden></p>
+<button class="btn line wide" type="button" id="affAdd">همکار اضافه کن</button>
+</div>
+<div class="card">
+<p class="eyebrow">هدیه‌ی معرف‌ها · هر خرید با کدشون = ۲ ماه</p>
+<div class="list" id="rewList"></div>
+</div>
+<div class="card">
+<p class="eyebrow">هدیه‌ی امضای «⚡ با پیک» · یه ماه</p>
+<label class="f"><span>پیج مشتری</span><input class="inp ltr" type="text" id="sigPage" placeholder="@page" spellcheck="false"></label>
+<p class="small muted" id="sigNoteA"></p>
+<p class="err" id="sigErr" hidden></p>
+<button class="btn ink wide" type="button" id="sigGo">یه ماه هدیه بساز</button>
+</div>
+<div class="card" id="rOut" hidden>
+<p class="eyebrow">پیام هدیه · برای مشتری بفرست</p>
+<p class="code" id="rText"></p>
+<div class="dice"><button class="btn acc" type="button" id="rCopy">کپی پیام + لینک</button><button class="btn line" type="button" id="rCopyLink">کپی لینک</button></div>
+</div>
+</div>
 <div class="stack" id="t-list" hidden>
 <h1 class="t2">اشتراک‌ها<span>کی تا کی</span></h1>
 <div class="card" id="siteBox">
@@ -138,6 +168,7 @@
 <div class="sheet" id="apSheet" hidden>
 <div class="in-sheet" role="dialog" aria-label="تأیید پرداخت">
 <h2 class="t3" id="apTitle">تأیید پرداخت</h2>
+<p class="small" id="apRef" hidden></p>
 <div class="list" id="apMsgs"></div>
 <label class="f"><span>پیج مشتری</span><input class="inp ltr" type="text" id="apPage" spellcheck="false"></label>
 <label class="f"><span>چند روز</span><input class="inp ltr" type="number" id="apDays" value="365" min="1" max="800"></label>
@@ -153,6 +184,6 @@
 </div>
 </div>
 <p class="toast" id="toast" hidden></p>
-<script src="a.js?v=db567d69ad"></script>
+<script src="a.js?v=114f78e970"></script>
 </body>
 </html>
