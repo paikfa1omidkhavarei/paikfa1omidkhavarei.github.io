@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' https://*.cdninstagram.com https://*.fbcdn.net https://zernio.com https://*.zernio.com; connect-src https://zernio.com; base-uri 'none'; form-action 'none'; object-src 'none'; require-trusted-types-for 'script'; trusted-types 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#F4F5F6">
+<title>پیک · پنل امید</title>
+<link rel="icon" href="icon.svg?v=a2101781ec" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=a2101781ec">
+<link rel="stylesheet" href="style.css?v=4e4fba6e1b">
+</head>
+<body>
+<main class="app">
+<section class="screen" id="a-lock">
+<header class="head"><img class="av logo" src="icon.svg?v=a2101781ec" alt="پیک" width="42" height="42"><p class="who"><b>پنل پیک</b><span>فقط برای امید</span></p></header>
+<div class="stack" id="aOpen" hidden>
+<h1 class="t2">سلام امید<span>رمز پنل رو بزن</span></h1>
+<label class="f"><span>رمز پنل</span><input class="inp" type="password" id="aPass" autocomplete="current-password"></label>
+<p class="err" id="aErr" hidden></p>
+<button class="btn acc wide" type="button" id="aGo">ورود</button>
+</div>
+<div class="stack" id="aSetup" hidden>
+<h1 class="t2">راه‌اندازی پنل<span>یه بار، روی گوشی خودت</span></h1>
+<p class="banner">کلید Zernio همون پیجی رو بزن که مشتری‌ها بهش پیام می‌دن (@itsomid1.ai). کلید و کلید امضا فقط روی همین گوشی، با رمز خودت قفل می‌مونن.</p>
+<label class="f"><span>کلید Zernio</span><input class="inp ltr" type="password" id="sKey" autocomplete="off" spellcheck="false"></label>
+<label class="f"><span>رمز پنل (حداقل ۱۲ حرف)</span><input class="inp" type="password" id="sPass" autocomplete="new-password"></label>
+<label class="f"><span>تکرار رمز</span><input class="inp" type="password" id="sPass2" autocomplete="new-password"></label>
+<p class="err" id="sErr" hidden></p>
+<button class="btn acc wide" type="button" id="sGo">وصل شو و بساز</button>
+</div>
+<label class="f"><span>بازگردانی از فایل پشتیبان</span><input class="inp" type="file" id="aRestore" accept="application/json,.json"></label>
+</section>
+<section class="screen" id="a-main" hidden>
+<header class="head">
+<span class="av" id="mAv">ا</span>
+<p class="who"><b>پنل پیک</b><span id="mUser"></span></p>
+<button class="iconbtn" type="button" aria-label="قفل" id="mLock" data-icon="lock"></button>
+</header>
+<p class="banner warn" id="mKeyWarn" hidden></p>
+<div class="tabs" id="mTabs"></div>
+<div class="stack" id="t-sales">
+<h1 class="t2">رسیدهای تازه<span>فقط کسایی که عکس رسید فرستادن</span></h1>
+<p class="banner warn" id="botOff" hidden></p>
+<div class="card list" id="convList"><p class="empty">در حال خوندن…</p></div>
+<div class="dice"><button class="btn line" type="button" id="convMore">دوباره بخون</button><button class="btn line" type="button" id="convAll">همه‌ی گفتگوها (دستی)</button></div>
+<div class="stack" id="leadBox" hidden>
+<h2 class="t3">در مسیر خرید <span id="leadCount"></span><span> · «پیک» فرستادن یا کامنت کردن، هنوز رسید ندادن</span></h2>
+<div class="card list" id="leadList"></div>
+</div>
+</div>
+<div class="stack" id="t-bot" hidden>
+<h1 class="t2">ربات فروش<span>از «پیک» تا رسید، خودکار</span></h1>
+<div class="card">
+<p class="small muted">کسی که «پیک» رو دایرکت کنه یا زیر یکی از پست‌هات کامنت کنه (یا برای تمدید «تمدید» رو دایرکت کنه)، این مراحل رو می‌ره: قیمت و شماره کارت ← عکس رسید ← آیدی پیج. بعد تو «رسیدها» میاد که تأییدش کنی.</p>
+<p class="pill" id="sbStatus">خاموش</p>
+</div>
+<div class="card">
+<label class="f"><span>مبلغ</span><input class="inp" type="text" id="sbPrice" maxlength="40"></label>
+<label class="f"><span>شماره کارت</span><input class="inp ltr" type="text" id="sbCard" inputmode="numeric" maxlength="24" placeholder="6037 ...."></label>
+<label class="f"><span>به نام</span><input class="inp" type="text" id="sbName" maxlength="40"></label>
+</div>
+<div class="card">
+<label class="f"><span>پیام اول، برای «پیک»</span><textarea class="inp" id="sbIntro" rows="7"></textarea></label>
+<label class="f"><span>پیام اول، برای «تمدید»</span><textarea class="inp" id="sbRenew" rows="6"></textarea></label>
+<label class="f"><span>اگه به‌جای عکس متن فرستاد</span><textarea class="inp" id="sbNudge" rows="2"></textarea></label>
+<label class="f"><span>بعد از رسید (آیدی پیج رو بپرس)</span><textarea class="inp" id="sbAsk" rows="3"></textarea></label>
+<label class="f"><span>پیام آخر</span><textarea class="inp" id="sbDone" rows="2"></textarea></label>
+<p class="small muted"><b>{مبلغ}</b>، <b>{کارت}</b> و <b>{نام}</b> تو متن‌ها خودکار جایگزین می‌شن.</p>
+</div>
+<p class="err" id="sbErr" hidden></p>
+<button class="btn acc wide" type="button" id="sbGo">ذخیره و روشن کن</button>
+<button class="btn line wide" type="button" id="sbOff">خاموش کن</button>
+</div>
+<div class="stack" id="t-issue" hidden>
+<h1 class="t2">صدور دستی<span>کد و لینک، بدون دایرکت</span></h1>
+<div class="card">
+<label class="f"><span>پیج مشتری</span><input class="inp ltr" type="text" id="iPage" placeholder="@page" spellcheck="false"></label>
+<label class="f"><span>چند روز</span><input class="inp ltr" type="number" id="iDays" value="365" min="1" max="800"></label>
+<p class="small muted" id="iNote"></p>
+<p class="err" id="iErr" hidden></p>
+<button class="btn ink wide" type="button" id="iGo">بساز</button>
+</div>
+<div class="card" id="iOut" hidden>
+<p class="eyebrow">لینک فعال‌سازی</p>
+<p class="code" id="iLink"></p>
+<div class="dice"><button class="btn acc" type="button" id="iCopyLink">کپی لینک</button><button class="btn line" type="button" id="iCopyCode">کپی کد</button></div>
+</div>
+</div>
+<div class="stack" id="t-list" hidden>
+<h1 class="t2">اشتراک‌ها<span>کی تا کی</span></h1>
+<div class="card list" id="licList"></div>
+</div>
+<div class="stack" id="t-key" hidden>
+<h1 class="t2">کلید و پشتیبان<span>مهم‌ترین چیز پنل</span></h1>
+<div class="card" id="keyBox"></div>
+<div class="card">
+<p>از پنل فایل پشتیبان بگیر و یه جای امن نگهش دار (مثلاً Saved Messages تلگرام). قفل‌شده‌ست و بدون رمزت به هیچ دردی نمی‌خوره. اگه این مرورگر پاک بشه و پشتیبان نداشته باشی، کلید امضا از دست می‌ره.</p>
+<button class="btn ink wide" type="button" id="kBackup">دانلود فایل پشتیبان</button>
+</div>
+<button class="btn line wide" type="button" id="kWipe">حذف پنل از این گوشی</button>
+</div>
+</section>
+</main>
+<div class="sheet" id="apSheet" hidden>
+<div class="in-sheet" role="dialog" aria-label="تأیید پرداخت">
+<h2 class="t3" id="apTitle">تأیید پرداخت</h2>
+<div class="list" id="apMsgs"></div>
+<label class="f"><span>پیج مشتری</span><input class="inp ltr" type="text" id="apPage" spellcheck="false"></label>
+<label class="f"><span>چند روز</span><input class="inp ltr" type="number" id="apDays" value="365" min="1" max="800"></label>
+<label class="f"><span>متن دایرکت</span><textarea class="inp" id="apText" rows="6"></textarea></label>
+<button class="btn line wide" type="button" id="apReject" hidden>رسید درست نیست؛ از لیست برش دار</button>
+<p class="small muted" id="apNote"></p>
+<p class="err" id="apErr" hidden></p>
+<div class="card" id="apFallback" hidden>
+<p class="small">کد ساخته شد ولی دایرکت نرفت. پیام و لینک رو کپی کن و خودت تو همین گفتگوی اینستاگرام بفرست؛ همون کد کار می‌کنه.</p>
+<button class="btn ink wide" type="button" id="apCopy">کپی پیام + لینک</button>
+</div>
+<div class="dice"><button class="btn acc" type="button" id="apGo">امضا و ارسال</button><button class="btn line" type="button" id="apClose">انصراف</button></div>
+</div>
+</div>
+<p class="toast" id="toast" hidden></p>
+<script src="a.js?v=b98cb0d601"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+# هدرهای امنیتی واقعی برای Cloudflare Pages (GitHub Pages این فایل رو نادیده می‌گیره؛ اونجا CSP از تگ meta میاد).
+# CSP همونِ تگ meta ـه، به‌اضافه‌ی frame-ancestors که با meta کار نمی‌کنه.
+/*
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' https://*.cdninstagram.com https://*.fbcdn.net https://zernio.com https://*.zernio.com; connect-src https://zernio.com; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-ancestors 'none'; require-trusted-types-for 'script'; trusted-types 'none'; upgrade-insecure-requests
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), browsing-topics=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Robots-Tag: noindex
+
+# صفحه همیشه تازه باشه که اصلاحیه‌های امنیتی فوری به همه برسه
+/
+  Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache
+/admin.html
+  Cache-Control: no-cache
+
+# اسکریپت‌ها با ?v= نسخه می‌خورن؛ یه روز کش کافیه
+/*.js
+  Cache-Control: public, max-age=86400
+/*.css
+  Cache-Control: public, max-age=86400
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' https://*.cdninstagram.com https://*.fbcdn.net https://zernio.com https://*.zernio.com; connect-src https://zernio.com; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; require-trusted-types-for 'script'; trusted-types 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F4F5F6">
+<title>پیک · دایرکت هوشمند</title>
+<link rel="manifest" href="manifest.webmanifest?v=a2101781ec">
+<link rel="icon" href="icon.svg?v=a2101781ec" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=a2101781ec">
+<meta name="apple-mobile-web-app-title" content="پیک">
+<link rel="stylesheet" href="style.css?v=4e4fba6e1b">
+</head>
+<body>
+<main class="app">
+<section class="screen" id="s-lock">
+<header class="head"><img class="av logo" src="icon.svg?v=a2101781ec" alt="پیک" width="42" height="42"><p class="who"><b>پیک</b><span>دایرکت هوشمند</span></p></header>
+<h1 class="t2">خوش اومدی<span>کی هستی؟</span></h1>
+<p class="banner warn" id="inapp" hidden>این صفحه تو مرورگر داخل اینستاگرام باز شده و ممکنه اطلاعاتت پاک بشه. از منوی ⋯ بزن «Open in browser».</p>
+<div class="list" id="profiles"></div>
+<div class="card" id="unlockBox" hidden>
+<p class="eyebrow" id="unlockName"></p>
+<label class="f"><span>رمزت</span><input class="inp" type="password" id="unlockPass" autocomplete="current-password"></label>
+<p class="err" id="unlockErr" hidden></p>
+<div class="dice"><button class="btn acc" type="button" id="unlockGo">ورود</button><button class="btn line" type="button" id="unlockForget">حذف از این گوشی</button></div>
+</div>
+<div class="card" id="moveIn" hidden>
+<p><b>پیک رو از صفحه‌ی اصلی گوشی باز کردی</b></p>
+<p class="small muted">آیفون حافظه‌ی این آیکون رو از سافاری جدا نگه می‌داره. تو سافاری، تو پیک، دکمه‌ی «کپی پروفایل برای آیکون» رو بزن و اینجا بچسبون. پروفایل با رمز خودت قفله.</p>
+<textarea class="inp ltr" id="moveText" rows="3" spellcheck="false" placeholder="{&quot;paikBackup&quot;:1,…}"></textarea>
+<p class="err" id="moveErr" hidden></p>
+<button class="btn ink wide" type="button" id="moveGo">بیار</button>
+</div>
+<button class="btn line wide" type="button" id="haveCode">کد اشتراک دارم</button>
+<p class="small muted">اشتراک نداری؟ تو دایرکت <bdi>@itsomid1.ai</bdi> بنویس «پیک».</p>
+</section>
+<section class="screen" id="s-activate" hidden>
+<h1 class="t2" id="actTitle">سلام<span>بیا راهش بندازیم</span></h1>
+<p class="banner acc" id="actWho"></p>
+<div class="card" id="actOut" hidden>
+<p><b>اول اینو تو مرورگر گوشیت باز کن</b></p>
+<p class="small muted">الان داخل اینستاگرامی. اگه همین‌جا فعالش کنی، پیک فقط داخل اینستاگرام کار می‌کنه و با بسته شدنش ممکنه پاک بشه.</p>
+<a class="btn acc wide" id="actOpenOut" rel="noopener noreferrer">باز کردن تو مرورگر</a>
+<button class="btn line wide" type="button" id="actCopyLink">کپی لینک</button>
+<p class="small muted" id="actOutHint"></p>
+<button class="btn line wide" type="button" id="actStay">نه، همین‌جا ادامه می‌دم</button>
+</div>
+<label class="f" id="codeBox" hidden><span>کد اشتراکت (از دایرکت)</span><textarea class="inp ltr" id="actCode" rows="3" spellcheck="false" placeholder="PK1..."></textarea></label>
+<p class="err" id="actErr" hidden></p>
+<div class="card" id="actRenew" hidden>
+<p>این پیج از قبل رو همین گوشیه. رمزت رو بزن تا اشتراکش تمدید بشه؛ ربات‌هات دست نمی‌خورن.</p>
+<label class="f"><span>رمزت</span><input class="inp" type="password" id="actRenPass" autocomplete="current-password"></label>
+<button class="btn acc wide" type="button" id="actRenGo">تمدید کن</button>
+</div>
+<div id="actNew" class="stack">
+<div class="card">
+<ol class="guide">
+<li><span>تو <a href="https://zernio.com" target="_blank" rel="noopener noreferrer">zernio.com</a> ثبت‌نام کن. رایگانه و کارت بانکی نمی‌خواد. پیک از راه همین سرویس رسمی به اینستاگرامت وصل می‌شه.</span></li>
+<li><span>اونجا «Connect account» ← Instagram رو بزن و با اینستاگرامت وارد شو. همه‌ی دسترسی‌ها رو تأیید کن، مخصوصاً پیام‌ها و کامنت‌ها. پیجت باید حرفه‌ای باشه (Creator یا Business).</span></li>
+<li><span>از منو برو «API Keys» ← «Create key». کلید فقط یه بار نشون داده می‌شه؛ کپیش کن و پایین همین صفحه بچسبون. این کلید مثل رمزه: جای دیگه‌ای نذارش.</span></li>
+<li><span>یه رمز برای این گوشی بذار. کلیدت با همین رمز قفل می‌شه و فقط روی گوشی خودت می‌مونه؛ نه ما می‌بینیمش، نه هیچ‌کس دیگه.</span></li>
+</ol>
+</div>
+<label class="f"><span>کلید Zernio</span><input class="inp ltr" type="password" id="actKey" autocomplete="off" spellcheck="false" placeholder="sk_..."></label>
+<button class="btn ink wide" type="button" id="actTest">وصلش کن</button>
+<p class="ok" id="actOk" hidden></p>
+<div class="card" id="actSave" hidden>
+<label class="f"><span>اسم این پروفایل</span><input class="inp" type="text" id="actName" maxlength="24"></label>
+<label class="f"><span>رمز این گوشی (حداقل ۸ حرف)</span><input class="inp" type="password" id="actPass" autocomplete="new-password"></label>
+<label class="f"><span>تکرار رمز</span><input class="inp" type="password" id="actPass2" autocomplete="new-password"></label>
+<button class="btn acc wide" type="button" id="actGo">شروع کن <span class="arr">←</span></button>
+</div>
+</div>
+<button class="btn line wide" type="button" id="actBack">برگشت</button>
+</section>
+<section class="screen" id="s-expired" hidden>
+<h1 class="t2">اشتراکت تموم شده<span>با یه کد تازه ادامه بده</span></h1>
+<p class="banner">ربات‌هایی که ساختی هنوز کار می‌کنن، ولی برای ساختن و تغییر دادن، تمدید لازمه. تو دایرکت <bdi>@itsomid1.ai</bdi> بنویس «تمدید».</p>
+<label class="f"><span>کد تازه</span><textarea class="inp ltr" id="renCode" rows="3" spellcheck="false"></textarea></label>
+<label class="f"><span>رمزت</span><input class="inp" type="password" id="renPass" autocomplete="current-password"></label>
+<p class="err" id="renErr" hidden></p>
+<button class="btn acc wide" type="button" id="renGo">تمدید کن</button>
+<button class="btn line wide" type="button" data-lock>خروج</button>
+</section>
+<section class="screen" id="home" hidden>
+<header class="head">
+<span class="av" id="hAv">ا</span>
+<p class="who"><b id="hHello">سلام</b><span id="hUser"></span></p>
+<button class="iconbtn" type="button" aria-label="قفل" data-lock data-icon="lock"></button>
+</header>
+<p class="banner warn" id="renewBanner" hidden></p>
+<div class="banner a2hs" id="a2hs" hidden><span id="a2hsText"></span><button class="iconbtn" type="button" id="a2hsClose" aria-label="بستن">×</button></div>
+<h1 class="t2">رو کدوم ریلز<span>پیک بذاریم؟</span></h1>
+<div class="fan" id="fan" role="listbox" aria-label="ریلزهای تو"></div>
+<p class="fan-hint" id="fanHint">در حال خوندن ریلزها…</p>
+<article class="today">
+<p class="eyebrow">امروز پیک برات</p>
+<p class="big" id="todayLine">…</p>
+<div class="funnel" id="funnel"></div>
+</article>
+<div class="row between"><h2 class="t3">ابزارها <span>همه یه‌جا</span></h2></div>
+<div class="feats" id="feats"></div>
+</section>
+<section class="screen" id="bots" hidden>
+<h1 class="t2">ربات‌هات<span>همه‌شون یه‌جا</span></h1>
+<div class="card list" id="botList"><p class="empty">در حال خوندن…</p></div>
+<button class="btn acc wide" type="button" id="newBot">ربات تازه بساز <span class="arr">←</span></button>
+</section>
+<section class="screen" id="build" hidden>
+<div class="row between">
+<button class="iconbtn" type="button" aria-label="برگشت" data-go="home" data-icon="back"></button>
+<span class="pill" id="bType"></span>
+</div>
+<h1 class="t2" id="bTitle"></h1>
+<div class="tabs" id="bTypes" aria-label="نوع ربات"></div>
+<div class="list posts" id="bReels" hidden></div>
+<div class="chips" id="goals" aria-label="هدف"></div>
+<label class="f" id="kwBox"><span>کلمه‌ای که باید بنویسن</span><input class="inp" type="text" id="bKw" maxlength="24" placeholder="مثلاً ۳ یا امنیت"></label>
+<div class="kwrow" id="kwHint"></div>
+<label class="f"><span>متن پیام <em class="small muted">(خودت بنویس، یا از پیشنهادها استفاده کن)</em></span><textarea class="inp" id="bText" rows="6"></textarea></label>
+<div class="chips" id="tones" aria-label="لحن"></div>
+<div class="dice"><button class="btn ink" type="button" id="dice"><span data-icon="dice"></span> یه متن دیگه</button><button class="btn line" type="button" id="testBtn">تستش کن</button></div>
+<div class="card" id="toggles"></div>
+<div class="card" id="linkBox" hidden>
+<label class="f"><span>لینک</span><input class="inp ltr" type="url" id="bUrl" placeholder="https://..."></label>
+<label class="f"><span>متن دکمه</span><input class="inp" type="text" id="bBtn" maxlength="20" placeholder="دریافت PDF"></label>
+</div>
+<div class="card" id="replyBox">
+<div class="tog"><p><span>جواب زیر کامنت</span><br><span class="small muted" id="replySub"></span></p><span class="sw" id="replySw" role="switch" tabindex="0" aria-label="جواب زیر کامنت"></span></div>
+<div class="replies" id="replyList"></div>
+<div class="dice" id="replyBtns"><button class="btn line" type="button" id="replyAdd">+ یه جواب دیگه</button><button class="btn line" type="button" id="replySuggest">پیشنهاد بده</button></div>
+</div>
+<p class="preview-note">پیش‌نمایش؛ همون چیزی که اونور می‌بینن</p>
+<div class="convo" id="convo"></div>
+<div class="card health">
+<div class="row between"><span class="eyebrow">سلامت پیج</span><span class="pill" id="hNote"></span></div>
+<div class="row between"><b class="score" id="hScore">۰</b><span class="small muted" id="hWhy"></span></div>
+<div class="meter"><i id="hBar"></i></div>
+</div>
+<button class="btn acc wide" type="button" id="goLive">روشنش کن <span class="arr">←</span></button>
+</section>
+<section class="screen" id="cal" hidden>
+<h1 class="t2">تقویم کار<span>هر روز چقدر جواب داد</span></h1>
+<div class="cal">
+<div class="mh"><b id="mName"></b><div class="nav"><button type="button" id="mPrev" aria-label="ماه قبل">›</button><button type="button" id="mNext" aria-label="ماه بعد">‹</button></div></div>
+<div class="wk"><span>ش</span><span>ی</span><span>د</span><span>س</span><span>چ</span><span>پ</span><span>ج</span></div>
+<div class="days" id="days"></div>
+</div>
+<article class="daycard" id="dayCard"></article>
+</section>
+<section class="screen" id="pub" hidden>
+<h1 class="t2">زمان‌بندی انتشار<span>ریلز و استوری، سر ساعت</span></h1>
+<div class="card list" id="pubList"><p class="empty">در حال خوندن…</p></div>
+<div class="card" id="pubForm">
+<div class="tabs" id="pubType"></div>
+<label class="f"><span>فایل (حداکثر حدود ۴٫۵ مگ)</span><input class="inp" type="file" id="pubFile" accept="image/jpeg,image/png,video/mp4"></label>
+<label class="f"><span>کپشن</span><textarea class="inp" id="pubCap" rows="3"></textarea></label>
+<label class="f"><span>کی منتشر بشه</span><input class="inp ltr" type="datetime-local" id="pubAt"></label>
+<p class="err" id="pubErr" hidden></p>
+<button class="btn ink wide" type="button" id="pubGo">بذارش تو صف</button>
+</div>
+</section>
+<section class="screen" id="stats" hidden>
+<h1 class="t2">آمار پیج<span>۳۰ روز اخیر</span></h1>
+<div class="stats3" id="statBoxes"></div>
+<div class="card list" id="topReels"></div>
+</section>
+<section class="screen" id="ment" hidden>
+<h1 class="t2">منشن‌یاب<span>کی کجا ازت اسم برد</span></h1>
+<div class="card" id="thanksBox"></div>
+<div class="card list" id="mentList"><p class="empty">در حال خوندن…</p></div>
+</section>
+</main>
+<nav class="dock" id="dock" aria-label="بخش‌ها" hidden></nav>
+<div class="sheet" id="sheet" hidden>
+<div class="in" role="dialog" aria-label="تست ربات">
+<h2 class="t3">تست، قبل از اعلام<span> · سه قدم</span></h2>
+<div class="step"><span class="n">۱</span><p>با یه اکانت دیگه (نه خود پیجت) کلمه رو بفرست: <b class="kw" id="sKw"></b></p></div>
+<div class="step"><span class="n">۲</span><p>پیک می‌بینه و جواب می‌ده. اگه فالو نیست، پیام تو «درخواست‌ها»ست.</p></div>
+<div class="step"><span class="n">۳</span><p>بعد تو «ربات‌ها» گزارشش رو ببین.</p></div>
+<button class="btn line wide" type="button" id="sheetClose">فهمیدم</button>
+</div>
+</div>
+<p class="toast" id="toast" hidden></p>
+<script src="p.js?v=9791f140ed"></script>
+</body>
+</html>
