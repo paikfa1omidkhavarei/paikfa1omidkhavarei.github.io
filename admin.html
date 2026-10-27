@@ -10,7 +10,7 @@
 <title>پیک · پنل امید</title>
 <link rel="icon" href="icon.svg?v=a2101781ec" type="image/svg+xml">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=a2101781ec">
-<link rel="stylesheet" href="style.css?v=db8c603609">
+<link rel="stylesheet" href="style.css?v=162afa38f3">
 </head>
 <body>
 <main class="app">
@@ -63,17 +63,24 @@
 <div class="meter"><i id="sbBar"></i></div>
 </div>
 <div class="card">
-<label class="f"><span>مبلغ</span><input class="inp" type="text" id="sbPrice" maxlength="40"></label>
 <label class="f"><span>شماره کارت</span><input class="inp ltr" type="text" id="sbCard" inputmode="numeric" maxlength="24" placeholder="6037 ...."></label>
 <label class="f"><span>به نام</span><input class="inp" type="text" id="sbName" maxlength="40"></label>
 </div>
 <div class="card">
+<p class="eyebrow">پکیج‌ها · همه با همه‌ی امکانات</p>
+<div class="plans" id="planList"></div>
+<button class="btn line wide" type="button" id="planAdd">+ یه پکیج دیگه</button>
+<p class="small muted">قیمت به هزار تومان (مثلاً ۹۹۰ یعنی ۹۹۰ هزار تومان). تخفیف هر پکیج خودکار نسبت به اولین پکیج حساب می‌شه. اسم پکیج روی دکمه‌ی دایرکت میاد (حداکثر ۲۰ حرف).</p>
+</div>
+<div class="card">
 <label class="f"><span>پیام اول، برای «پیک»</span><textarea class="inp" id="sbIntro" rows="7"></textarea></label>
 <label class="f"><span>پیام اول، برای «تمدید»</span><textarea class="inp" id="sbRenew" rows="6"></textarea></label>
+<label class="f"><span>بعد از انتخاب پکیج (مبلغ و کارت)</span><textarea class="inp" id="sbPay" rows="5"></textarea></label>
+<label class="f"><span>اگه پکیج رو انتخاب نکرد</span><textarea class="inp" id="sbPick" rows="2"></textarea></label>
 <label class="f"><span>اگه به‌جای عکس متن فرستاد</span><textarea class="inp" id="sbNudge" rows="2"></textarea></label>
 <label class="f"><span>بعد از رسید (آیدی پیج رو بپرس)</span><textarea class="inp" id="sbAsk" rows="3"></textarea></label>
 <label class="f"><span>پیام آخر</span><textarea class="inp" id="sbDone" rows="2"></textarea></label>
-<p class="small muted"><b>{مبلغ}</b>، <b>{کارت}</b> و <b>{نام}</b> تو متن‌ها خودکار جایگزین می‌شن.</p>
+<p class="small muted"><b>{پکیج‌ها}</b> (فهرست پکیج‌ها با قیمت و تخفیف)، <b>{پکیج}</b> و <b>{مبلغ}</b> (پکیجی که انتخاب کرده)، <b>{کارت}</b> و <b>{نام}</b> تو متن‌ها خودکار جایگزین می‌شن.</p>
 </div>
 <p class="err" id="sbErr" hidden></p>
 <button class="btn acc wide" type="button" id="sbGo">ذخیره و روشن کن</button>
@@ -146,6 +153,6 @@
 </div>
 </div>
 <p class="toast" id="toast" hidden></p>
-<script src="a.js?v=fc556825b5"></script>
+<script src="a.js?v=4599dfd6bd"></script>
 </body>
 </html>
