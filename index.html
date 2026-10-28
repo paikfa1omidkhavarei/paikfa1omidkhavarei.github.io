@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="paik-build" content="02f5e2b453">
+<meta name="paik-build" content="6d5e1ef703">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' https://*.cdninstagram.com https://*.fbcdn.net https://zernio.com https://*.zernio.com; connect-src 'self' https://zernio.com; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; require-trusted-types-for 'script'; trusted-types 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -13,7 +13,7 @@
 <link rel="icon" href="icon.svg?v=a2101781ec" type="image/svg+xml">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=a2101781ec">
 <meta name="apple-mobile-web-app-title" content="پیک">
-<link rel="stylesheet" href="style.css?v=843ebd711e">
+<link rel="stylesheet" href="style.css?v=5f97020f8e">
 </head>
 <body>
 <main class="app">
@@ -137,8 +137,12 @@
 <button class="iconbtn" type="button" aria-label="برگشت" data-go="home" data-icon="back"></button>
 <span class="pill" id="bType"></span>
 </div>
-<h1 class="t2" id="bTitle"></h1>
-<div class="tabs" id="bTypes" aria-label="نوع ربات"></div>
+<div class="tool-hero" id="bHero">
+<span class="tool-ic" id="bIc"></span>
+<div class="tool-txt"><h1 class="t2" id="bTitle"></h1><p class="small" id="bTag"></p></div>
+</div>
+<ol class="flow3" id="bFlow"></ol>
+<div class="card tip" id="liveTip" hidden><p><b>● زنده</b> این ربات فقط وقتی لایوی کار می‌کنه. قبل از شروع لایو روشنش کن و وسط لایو چند بار بگو «کلمه رو تو کامنت بنویس». بعد از لایو از «ربات‌ها» خاموشش کن.</p></div>
 <div class="tabs" id="bScope" hidden></div>
 <div class="list posts" id="bReels" hidden></div>
 <div class="card" id="bFind" hidden>
@@ -149,6 +153,18 @@
 <div class="chips" id="goals" aria-label="هدف"></div>
 <label class="f" id="kwBox"><span>کلمه‌ای که باید بنویسن</span><input class="inp" type="text" id="bKw" maxlength="24" placeholder="مثلاً ۳ یا امنیت"></label>
 <div class="kwrow" id="kwHint"></div>
+<div class="chips" id="kwSug" aria-label="کلمه‌های پیشنهادی"></div>
+<div class="card" id="formBox" hidden>
+<p class="eyebrow">چی می‌خوای جمع کنی؟</p>
+<div class="chips" id="formKind" aria-label="نوع جواب"></div>
+<label class="f"><span>پیام تشکر بعد از جواب</span><input class="inp" type="text" id="bThanks" maxlength="200"></label>
+<p class="small muted" id="formNote"></p>
+</div>
+<div class="card" id="storyCap" hidden>
+<p class="eyebrow">متن پیشنهادی روی خود استوری</p>
+<p class="big" id="storyCapText"></p>
+<button class="btn line sm" type="button" id="storyCapCopy">کپی متن</button>
+</div>
 <label class="f"><span>متن پیام <em class="small muted">(خودت بنویس، یا از پیشنهادها استفاده کن)</em></span><textarea class="inp" id="bText" rows="6"></textarea></label>
 <div class="rw">
 <span class="small muted">✨ اصلاح متن خودت با لحن:</span>
@@ -240,6 +256,22 @@
 <button class="btn line wide" type="button" id="sheetClose">فهمیدم</button>
 </div>
 </div>
+<div class="sheet" id="pickSheet" hidden>
+<div class="in" role="dialog" aria-label="ابزار تازه">
+<h2 class="t3">کدوم ابزار؟<span> · هر کدوم برای یه کار</span></h2>
+<div class="tools" id="pickList"></div>
+<button class="btn line wide" type="button" id="pickClose">بستن</button>
+</div>
+</div>
+<div class="sheet" id="resSheet" hidden>
+<div class="in" role="dialog" aria-label="نتیجه‌ها">
+<h2 class="t3" id="resTitle"></h2>
+<p class="small muted" id="resSub"></p>
+<div class="list" id="resList"></div>
+<div class="dice" id="resActs"></div>
+<button class="btn line wide" type="button" id="resClose">بستن</button>
+</div>
+</div>
 <div class="sheet" id="termsSheet" hidden>
 <div class="in-sheet" role="dialog" aria-label="شرایط تازه">
 <h2 class="t3">شرایط پیک به‌روز شده</h2>
@@ -262,6 +294,6 @@
 </div>
 </div>
 <p class="toast" id="toast" hidden></p>
-<script src="p.js?v=491cf0b2e0"></script>
+<script src="p.js?v=5da9cd4320"></script>
 </body>
 </html>
