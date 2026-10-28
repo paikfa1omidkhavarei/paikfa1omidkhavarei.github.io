@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="paik-build" content="e1ab313d11">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self' https://api.github.com; base-uri 'none'; form-action 'none'; object-src 'none'; require-trusted-types-for 'script'; trusted-types 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#F4F5F6">
+<title>پیک · پنل همکاری</title>
+<link rel="icon" href="icon.svg?v=a2101781ec" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=a2101781ec">
+<link rel="stylesheet" href="style.css?v=843ebd711e">
+</head>
+<body>
+<main class="app">
+<section class="screen" id="p-lock">
+<header class="head"><img class="av logo" src="icon.svg?v=a2101781ec" alt="پیک" width="42" height="42"><p class="who"><b>پیک</b><span>پنل همکاری فروش</span></p><button class="iconbtn themebtn" type="button" data-theme-btn></button></header>
+<h1 class="t2">پنل همکاری<span>فروش‌هایی که از طرف تو بوده</span></h1>
+<div class="card" id="pSetup" hidden>
+<p class="eyebrow" id="pSetupWho"></p>
+<p class="small muted">یه رمز برای خودت بذار. نام کاربریت همین آیدی اینستاگرامته. رمزت فقط رو همین گوشی می‌مونه و هیچ‌جا فرستاده نمی‌شه.</p>
+<label class="f"><span>رمز (حداقل ۸ حرف)</span><input class="inp" type="password" id="pPass1" autocomplete="new-password"></label>
+<label class="f"><span>تکرار رمز</span><input class="inp" type="password" id="pPass2" autocomplete="new-password"></label>
+<p class="err" id="pSetupErr" hidden></p>
+<label class="remember"><input type="checkbox" id="pRemember1" checked> رو این گوشی یادم بمون (دیگه رمز نمی‌خواد تا «قفل» رو بزنی)</label>
+<button class="btn acc wide" type="button" id="pSetupGo">ورود به پنل</button>
+</div>
+<div class="list" id="pProfiles"></div>
+<div class="card" id="pLogin" hidden>
+<p class="eyebrow" id="pLoginWho"></p>
+<label class="f"><span>رمزت</span><input class="inp" type="password" id="pPass" autocomplete="current-password"></label>
+<p class="err" id="pLoginErr" hidden></p>
+<label class="remember"><input type="checkbox" id="pRemember2" checked> رو این گوشی یادم بمون</label>
+<div class="dice"><button class="btn acc" type="button" id="pLoginGo">ورود</button><button class="btn line" type="button" id="pForget">حذف از این گوشی</button></div>
+</div>
+<div class="card" id="pNone" hidden>
+<p>برای ورود، لینک مخصوص خودت رو از امید بگیر و همون رو روی این گوشی باز کن.</p>
+<p class="small muted">دایرکت <bdi>@itsomid1.ai</bdi></p>
+</div>
+<p class="small muted build" data-build></p>
+</section>
+<section class="screen" id="p-main" hidden>
+<header class="head">
+<span class="av" id="pAv">ه</span>
+<p class="who"><b id="pName"></b><span id="pUser"></span></p>
+<button class="iconbtn themebtn" type="button" data-theme-btn></button>
+<button class="iconbtn" type="button" aria-label="قفل" id="pLock" data-icon="lock"></button>
+</header>
+<article class="today">
+<p class="eyebrow">کد تخفیف تو</p>
+<p class="refcode" id="pCode">…</p>
+<p class="small muted" id="pHow"></p>
+<div class="dice"><button class="btn acc" type="button" id="pShare">فرستادن کد</button><button class="btn line" type="button" id="pCopy">کپی کد</button></div>
+</article>
+<div class="stats3" id="pStats"></div>
+<div class="card" id="pMoney"></div>
+<div class="card list" id="pSales"></div>
+<div class="card list" id="pPays"></div>
+<p class="small muted" id="pUpdated"></p>
+<button class="btn line wide" type="button" id="pRefresh">به‌روز کن</button>
+<p class="small muted build" data-build></p>
+</section>
+</main>
+<p class="toast" id="toast" hidden></p>
+<script src="h.js?v=e29a6ee7cd"></script>
+</body>
+</html>

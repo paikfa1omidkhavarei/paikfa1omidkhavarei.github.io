@@ -2,8 +2,8 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="paik-build" content="2044952378">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' https://*.cdninstagram.com https://*.fbcdn.net https://zernio.com https://*.zernio.com; connect-src 'self' https://zernio.com; base-uri 'none'; form-action 'none'; object-src 'none'; require-trusted-types-for 'script'; trusted-types 'none'; upgrade-insecure-requests">
+<meta name="paik-build" content="e1ab313d11">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' https://*.cdninstagram.com https://*.fbcdn.net https://zernio.com https://*.zernio.com; connect-src 'self' https://zernio.com https://api.github.com; base-uri 'none'; form-action 'none'; object-src 'none'; require-trusted-types-for 'script'; trusted-types 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
@@ -11,7 +11,7 @@
 <title>پیک · پنل امید</title>
 <link rel="icon" href="icon.svg?v=a2101781ec" type="image/svg+xml">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=a2101781ec">
-<link rel="stylesheet" href="style.css?v=120feece96">
+<link rel="stylesheet" href="style.css?v=843ebd711e">
 </head>
 <body>
 <main class="app">
@@ -117,12 +117,27 @@
 </div>
 <div class="stack" id="t-refs" hidden>
 <h1 class="t2">معرف‌ها<span>همکارها و هدیه‌ها</span></h1>
+<div class="card" id="ghBox">
+<p class="eyebrow">دفتر همکارها · گیت‌هاب</p>
+<p class="small" id="ghState"></p>
+<details class="small muted"><summary>چطوری وصلش کنم؟ (فقط یه بار)</summary>
+<p>۱. با همین حساب گیت‌هاب پیک یه مخزن تازه بساز به اسم <b>paik-ledger</b>، <b>Public</b> و خالی. (دفترها رمزگذاری‌شده‌ان؛ عمومی بودن مخزن چیزی رو لو نمی‌ده.)</p>
+<p>۲. Settings ← Developer settings ← Personal access tokens ← Fine-grained tokens ← Generate new token.</p>
+<p>۳. Repository access: Only select repositories ← paik-ledger. Permissions ← Contents: Read and write. انقضا: یه سال.</p>
+<p>۴. توکن رو اینجا بچسبون و «ذخیره و تست» رو بزن. این توکن فقط به همون یه مخزن دسترسی داره، نه به سایت پیک.</p>
+</details>
+<label class="f"><span>مخزن</span><input class="inp ltr" type="text" id="ghRepo" spellcheck="false"></label>
+<label class="f"><span>توکن</span><input class="inp ltr" type="password" id="ghToken" autocomplete="off" spellcheck="false"></label>
+<p class="err" id="ghErr" hidden></p>
+<div class="dice"><button class="btn ink" type="button" id="ghSave">ذخیره و تست</button><button class="btn line" type="button" id="ghPushAll">به‌روز کردن دفتر همه</button></div>
+</div>
 <div class="card">
-<p class="eyebrow">همکارها · پورسانت از هر فروش</p>
+<p class="eyebrow">همکارهای فروش · پورسانت از هر فروش</p>
 <p class="small muted">خریدار کد همکار رو تو دایرکت می‌نویسه و ۱۰٪ تخفیف می‌گیره؛ پورسانت از مبلغ واقعی پرداخت‌شده حساب می‌شه. بعد از اضافه یا حذف همکار، تو «ربات فروش» یه بار «ذخیره و روشن کن» رو بزن تا ربات کدش رو بشناسه.</p>
 <div class="list" id="affList"></div>
 <label class="f"><span>کد همکار (انگلیسی، مثلاً sara)</span><input class="inp ltr" type="text" id="affCode" spellcheck="false" maxlength="30"></label>
-<label class="f"><span>اسم یا پیج همکار</span><input class="inp" type="text" id="affName" maxlength="40"></label>
+<label class="f"><span>اسم همکار</span><input class="inp" type="text" id="affName" maxlength="40"></label>
+<label class="f"><span>آیدی اینستاگرامش (نام کاربری پنل همکاری)</span><input class="inp ltr" type="text" id="affIg" placeholder="@page" spellcheck="false" maxlength="31"></label>
 <label class="f"><span>پورسانت (درصد)</span><input class="inp ltr" type="number" id="affRate" value="25" min="1" max="60"></label>
 <p class="err" id="affErr" hidden></p>
 <button class="btn line wide" type="button" id="affAdd">همکار اضافه کن</button>
@@ -187,6 +202,6 @@
 </div>
 </div>
 <p class="toast" id="toast" hidden></p>
-<script src="a.js?v=59a5a0d199"></script>
+<script src="a.js?v=23c33c3e24"></script>
 </body>
 </html>
