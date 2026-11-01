@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="paik-build" content="0d790f2dc5">
+<meta name="paik-build" content="3077df7a84">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' https://*.cdninstagram.com https://*.fbcdn.net https://zernio.com https://*.zernio.com; connect-src 'self' https://zernio.com; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; require-trusted-types-for 'script'; trusted-types 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -13,7 +13,7 @@
 <link rel="icon" href="icon.svg?v=a2101781ec" type="image/svg+xml">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=a2101781ec">
 <meta name="apple-mobile-web-app-title" content="پیک">
-<link rel="stylesheet" href="style.css?v=e6575631f0">
+<link rel="stylesheet" href="style.css?v=622c57f3c3">
 </head>
 <body>
 <main class="app">
@@ -259,14 +259,14 @@
 <div class="step"><span class="n">۱</span><p>با یه اکانت دیگه (نه خود پیجت) کلمه رو بفرست: <b class="kw" id="sKw"></b></p></div>
 <div class="step"><span class="n">۲</span><p>پیک می‌بینه و جواب می‌ده. اگه فالو نیست، پیام تو «درخواست‌ها»ست.</p></div>
 <div class="step"><span class="n">۳</span><p>بعد تو «ربات‌ها» گزارشش رو ببین.</p></div>
-<button class="btn line wide" type="button" id="sheetClose">فهمیدم</button>
+<button class="btn line wide" type="button" id="sheetClose" data-close>فهمیدم</button>
 </div>
 </div>
 <div class="sheet" id="pickSheet" hidden>
 <div class="in" role="dialog" aria-label="ابزار تازه">
 <h2 class="t3">کدوم ابزار؟<span> · هر کدوم برای یه کار</span></h2>
 <div class="tools" id="pickList"></div>
-<button class="btn line wide" type="button" id="pickClose">بستن</button>
+<button class="btn line wide" type="button" id="pickClose" data-close>بستن</button>
 </div>
 </div>
 <div class="sheet" id="resSheet" hidden>
@@ -275,10 +275,10 @@
 <p class="small muted" id="resSub"></p>
 <div class="list" id="resList"></div>
 <div class="dice" id="resActs"></div>
-<button class="btn line wide" type="button" id="resClose">بستن</button>
+<button class="btn line wide" type="button" id="resClose" data-close>بستن</button>
 </div>
 </div>
-<div class="sheet" id="termsSheet" hidden>
+<div class="sheet" id="termsSheet" data-stay hidden>
 <div class="in-sheet" role="dialog" aria-label="شرایط تازه">
 <h2 class="t3">شرایط پیک به‌روز شده</h2>
 <ul class="news">
@@ -296,10 +296,10 @@
 <div class="in-sheet" role="dialog" aria-label="تازه‌های پیک">
 <h2 class="t3">تازه‌های پیک ✨</h2>
 <ul class="news" id="newsList"></ul>
-<button class="btn acc wide" type="button" id="newsOk">دیدم</button>
+<button class="btn acc wide" type="button" id="newsOk" data-close>دیدم</button>
 </div>
 </div>
 <p class="toast" id="toast" hidden></p>
-<script src="p.js?v=fed9fef546"></script>
+<script src="p.js?v=a1a5bab390"></script>
 </body>
 </html>
