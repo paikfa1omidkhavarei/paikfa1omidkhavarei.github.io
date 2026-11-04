@@ -2,8 +2,8 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="paik-build" content="3077df7a84">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' https://*.cdninstagram.com https://*.fbcdn.net https://zernio.com https://*.zernio.com; connect-src 'self' https://zernio.com; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; require-trusted-types-for 'script'; trusted-types 'none'; upgrade-insecure-requests">
+<meta name="paik-build" content="86104ee52f">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' https://*.cdninstagram.com https://*.fbcdn.net https://zernio.com https://*.zernio.com; connect-src 'self' https://zernio.com https://api.github.com; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; require-trusted-types-for 'script'; trusted-types 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex">
@@ -43,6 +43,7 @@
 <section class="screen" id="s-activate" hidden>
 <h1 class="t2" id="actTitle">سلام<span>بیا راهش بندازیم</span></h1>
 <p class="banner acc" id="actWho"></p>
+<p class="banner" id="actPart" hidden></p>
 <div class="card" id="actOut" hidden>
 <p><b>اول اینو تو مرورگر گوشیت باز کن</b></p>
 <p class="small muted">الان داخل اینستاگرامی. اگه همین‌جا فعالش کنی، پیک فقط داخل اینستاگرام کار می‌کنه و با بسته شدنش ممکنه پاک بشه.</p>
@@ -251,6 +252,42 @@
 <div class="tog"><p><span>امضای «⚡ با پیک» زیر پیام ربات‌هام</span><br><span class="small muted" id="sigNote"></span></p><span class="sw" role="switch" tabindex="0" id="sigSw" aria-label="امضای با پیک"></span></div>
 </div>
 </section>
+<section class="screen" id="part" hidden>
+<h1 class="t2">همکاری<span>کد تو، فروش‌ها، درآمد، تسویه</span></h1>
+<div class="card" id="partIntro" hidden>
+<p class="eyebrow">خوش اومدی به تیم پیک 🤝</p>
+<div class="step"><span class="n">۱</span><p>کدت رو با «فرستادن کد» برای مخاطب‌هات بفرست. هر کی موقع خرید پیک کدت رو تو دایرکت بنویسه، تخفیف می‌گیره.</p></div>
+<div class="step"><span class="n">۲</span><p>خریدش که تأیید شد، همین‌جا میاد و سهمت به «مونده‌ی حساب» اضافه می‌شه. تو دایرکت هم خبرت می‌کنیم.</p></div>
+<div class="step"><span class="n">۳</span><p>هر وقت خواستی، شماره کارتت رو بنویس و «درخواست تسویه» رو بزن. تا ۲۴ ساعت واریز می‌شه و حسابت صفر می‌شه.</p></div>
+<p class="small muted">ربات‌های دایرکت پیج خودت هم تو بقیه‌ی بخش‌های منوی پایینه؛ مثل هر مشتری پیک.</p>
+<button class="btn acc wide" type="button" id="partIntroOk">فهمیدم</button>
+</div>
+<article class="today">
+<p class="eyebrow">کد تخفیف تو</p>
+<p class="refcode" id="partCode">…</p>
+<p class="small muted" id="partHow"></p>
+<div class="dice"><button class="btn acc" type="button" id="partShare">فرستادن کد</button><button class="btn line" type="button" id="partCopy">کپی کد</button></div>
+</article>
+<div class="stats3" id="partStats"></div>
+<div class="card">
+<p class="eyebrow">تسویه حساب</p>
+<p><b id="partDue"></b></p>
+<p class="small muted" id="partMoney"></p>
+<label class="f"><span>شماره کارت (یا شبا) برای واریز</span><input class="inp ltr" type="text" id="partCard" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="34" placeholder="6037 ...."></label>
+<p class="err" id="partErr" hidden></p>
+<a class="btn acc wide" id="partReq" href="https://ig.me/m/itsomid1.ai" target="_blank" rel="noopener noreferrer">درخواست تسویه</a>
+<p class="small muted">با زدنش متن درخواست کپی می‌شه و دایرکت <bdi>@itsomid1.ai</bdi> باز می‌شه؛ بچسبونش و بفرست.</p>
+<p class="banner" id="partReqState" hidden></p>
+<div id="partReqOut" hidden>
+<pre class="small" id="partReqText"></pre>
+<button class="btn line wide" type="button" id="partReqCopy">کپی دوباره‌ی متن</button>
+</div>
+</div>
+<div class="card list" id="partSales"></div>
+<div class="card list" id="partPays"></div>
+<p class="small muted" id="partUpdated"></p>
+<button class="btn line wide" type="button" id="partRefresh">به‌روز کن</button>
+</section>
 </main>
 <nav class="dock" id="dock" aria-label="بخش‌ها" hidden></nav>
 <div class="sheet" id="sheet" hidden>
@@ -300,6 +337,6 @@
 </div>
 </div>
 <p class="toast" id="toast" hidden></p>
-<script src="p.js?v=a1a5bab390"></script>
+<script src="p.js?v=9320694c91"></script>
 </body>
 </html>

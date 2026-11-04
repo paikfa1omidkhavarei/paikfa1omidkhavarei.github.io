@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="paik-build" content="3077df7a84">
+<meta name="paik-build" content="86104ee52f">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self' https://api.github.com; base-uri 'none'; form-action 'none'; object-src 'none'; require-trusted-types-for 'script'; trusted-types 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -16,61 +16,17 @@
 <body>
 <main class="app">
 <section class="screen" id="p-lock">
-<header class="head"><img class="av logo" src="icon.svg?v=a2101781ec" alt="پیک" width="42" height="42"><p class="who"><b>پیک</b><span>پنل همکاری فروش</span></p><button class="iconbtn themebtn" type="button" data-theme-btn></button></header>
-<h1 class="t2">پنل همکاری<span>فروش‌هایی که از طرف تو بوده</span></h1>
-<div class="card" id="pOut" hidden>
-<p><b>این صفحه تو مرورگر اینستاگرام باز شده</b></p>
-<p class="small muted">مرورگر اینستاگرام ممکنه رمز و پنلت رو پاک کنه. با دکمه‌ی پایین تو مرورگر اصلی گوشیت بازش کن و همون‌جا رمز بذار.</p>
-<a class="btn acc wide" id="pOutGo" rel="noopener noreferrer">باز کردن تو مرورگر</a>
-<p class="small muted" id="pOutHint"></p>
-<div class="dice"><button class="btn line" type="button" id="pOutCopy">کپی لینک</button><button class="btn line" type="button" id="pOutStay">همین‌جا ادامه بده</button></div>
+<header class="head"><img class="av logo" src="icon.svg?v=a2101781ec" alt="پیک" width="42" height="42"><p class="who"><b>پیک</b><span>همکاری فروش</span></p><button class="iconbtn themebtn" type="button" data-theme-btn></button></header>
+<h1 class="t2">پنل همکاری<span>حالا داخل خود اپ پیکه</span></h1>
+<div class="card">
+<p>کد تخفیفت، فروش‌ها، درآمد و درخواست تسویه حالا تو بخش «همکاری» اپ پیکه؛ کنار ربات‌های دایرکت پیج خودت.</p>
+<p class="small muted">برای ورود، لینک فعال‌سازی تازه‌ت رو از دایرکت <bdi>@itsomid1.ai</bdi> بگیر (بنویس «پنل»). اگه قبلاً پیک رو فعال کردی، همون اپ رو باز کن.</p>
+<a class="btn acc wide" href="./">باز کردن پیک</a>
 </div>
-<div class="card" id="pSetup" hidden>
-<p class="eyebrow" id="pSetupWho"></p>
-<p class="small muted">یه رمز برای خودت بذار. نام کاربریت همین آیدی اینستاگرامته. رمزت فقط رو همین گوشی می‌مونه و هیچ‌جا فرستاده نمی‌شه.</p>
-<label class="f"><span>رمز (حداقل ۸ حرف)</span><input class="inp" type="password" id="pPass1" autocomplete="new-password"></label>
-<label class="f"><span>تکرار رمز</span><input class="inp" type="password" id="pPass2" autocomplete="new-password"></label>
-<p class="err" id="pSetupErr" hidden></p>
-<label class="remember"><input type="checkbox" id="pRemember1" checked> رو این گوشی یادم بمون (دیگه رمز نمی‌خواد تا «قفل» رو بزنی)</label>
-<button class="btn acc wide" type="button" id="pSetupGo">ورود به پنل</button>
-</div>
-<div class="list" id="pProfiles"></div>
-<div class="card" id="pLogin" hidden>
-<p class="eyebrow" id="pLoginWho"></p>
-<label class="f"><span>رمزت</span><input class="inp" type="password" id="pPass" autocomplete="current-password"></label>
-<p class="err" id="pLoginErr" hidden></p>
-<label class="remember"><input type="checkbox" id="pRemember2" checked> رو این گوشی یادم بمون</label>
-<div class="dice"><button class="btn acc" type="button" id="pLoginGo">ورود</button><button class="btn line" type="button" id="pForget">حذف از این گوشی</button></div>
-</div>
-<div class="card" id="pNone" hidden>
-<p>برای ورود، لینک مخصوص خودت رو از امید بگیر و همون رو روی این گوشی باز کن.</p>
-<p class="small muted">دایرکت <bdi>@itsomid1.ai</bdi></p>
-</div>
-<p class="small muted build" data-build></p>
-</section>
-<section class="screen" id="p-main" hidden>
-<header class="head">
-<span class="av" id="pAv">ه</span>
-<p class="who"><b id="pName"></b><span id="pUser"></span></p>
-<button class="iconbtn themebtn" type="button" data-theme-btn></button>
-<button class="iconbtn" type="button" aria-label="قفل" id="pLock" data-icon="lock"></button>
-</header>
-<article class="today">
-<p class="eyebrow">کد تخفیف تو</p>
-<p class="refcode" id="pCode">…</p>
-<p class="small muted" id="pHow"></p>
-<div class="dice"><button class="btn acc" type="button" id="pShare">فرستادن کد</button><button class="btn line" type="button" id="pCopy">کپی کد</button></div>
-</article>
-<div class="stats3" id="pStats"></div>
-<div class="card" id="pMoney"></div>
-<div class="card list" id="pSales"></div>
-<div class="card list" id="pPays"></div>
-<p class="small muted" id="pUpdated"></p>
-<button class="btn line wide" type="button" id="pRefresh">به‌روز کن</button>
 <p class="small muted build" data-build></p>
 </section>
 </main>
 <p class="toast" id="toast" hidden></p>
-<script src="h.js?v=0e9284a9a5"></script>
+<script src="h.js?v=cdc75c5903"></script>
 </body>
 </html>
