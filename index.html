@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="paik-build" content="582f4134f9">
+<meta name="paik-build" content="e04b448ae0">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' https://*.cdninstagram.com https://*.fbcdn.net https://zernio.com https://*.zernio.com; connect-src 'self' https://zernio.com https://api.github.com https://*.r2.cloudflarestorage.com; media-src blob:; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; require-trusted-types-for 'script'; trusted-types 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -176,6 +176,12 @@
 <div class="chips" id="tones" aria-label="لحن"></div>
 <div class="dice"><button class="btn ink" type="button" id="dice"><span data-icon="dice"></span> یه متن دیگه</button><button class="btn line" type="button" id="testBtn">تستش کن</button></div>
 <div class="card" id="toggles"></div>
+<div class="card stack" id="gateBox" hidden>
+<p class="eyebrow">پیام شرط فالو</p>
+<label class="f"><span>برای کسی که هنوز فالو نکرده</span><textarea class="inp msgbox" id="bGateMsg" rows="3"></textarea></label>
+<label class="f"><span>متن دکمه (حداکثر ۲۰ حرف)</span><input class="inp" type="text" id="bGateBtn" maxlength="20"></label>
+<label class="f"><span>اگه دکمه رو زد ولی فالو نکرده بود</span><textarea class="inp msgbox" id="bGateNo" rows="2"></textarea></label>
+</div>
 <div class="card" id="linkBox" hidden>
 <label class="f"><span>لینک</span><input class="inp ltr" type="url" id="bUrl" placeholder="https://..."></label>
 <label class="f"><span>متن دکمه</span><input class="inp" type="text" id="bBtn" maxlength="20" placeholder="دریافت PDF"></label>
@@ -338,6 +344,6 @@
 </div>
 </div>
 <p class="toast" id="toast" hidden></p>
-<script src="p.js?v=9960d96a9e"></script>
+<script src="p.js?v=48bf9b9f2c"></script>
 </body>
 </html>
